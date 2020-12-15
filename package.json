@@ -10,7 +10,7 @@
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|ts|tsx|json)\"",
     "format": "npm run prettier -- --write",
     "check-format": "npm run prettier -- --list-different",
-    "validate": "npm run check-types && npm run check-format && npm run lint && npm run build",
+    "validate": "npm-run-all --parallel check-types check-format lint build",
     "lint-staged": "lint-staged"
   },
   "devDependencies": {
@@ -24,6 +24,7 @@
     "eslint-config-prettier": "^6.5.0",
     "husky": "^4.3.6",
     "lint-staged": "^10.5.3",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "typescript": "^4.1.2"
   }
